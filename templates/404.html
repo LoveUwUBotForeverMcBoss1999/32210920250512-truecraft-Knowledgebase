@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+
+{% block title %}Page Not Found - TrueCraft Network{% endblock %}
+{% block description %}The page you're looking for could not be found in the TrueCraft Network knowledgebase{% endblock %}
+
+{% block content %}
+<style>
+    .error-container {
+        text-align: center;
+        padding: 4rem 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .error-icon {
+        font-size: 6rem;
+        color: var(--accent);
+        margin-bottom: 2rem;
+        opacity: 0.8;
+    }
+
+    .error-code {
+        font-size: 8rem;
+        font-weight: 900;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+        line-height: 1;
+    }
+
+    .error-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+    }
+
+    .error-description {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 3rem;
+    }
+
+    .error-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: color-mix(in srgb, var(--primary) 80%, black);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(122, 63, 242, 0.3);
+    }
+
+    .btn-secondary {
+        background: var(--bg-panel);
+        color: var(--text-light);
+        border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+        background: var(--hover);
+        border-color: var(--primary);
+    }
+
+    .suggestions {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: left;
+    }
+
+    .suggestions-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .suggestions-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .suggestions-list li {
+        margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .suggestions-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+    }
+
+    .suggestions-list a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .suggestions-list a:hover {
+        color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+        .error-code {
+            font-size: 6rem;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+        }
+
+        .error-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+
+        .suggestions {
+            padding: 1.5rem;
+        }
+    }
+
+    .floating-elements {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .floating-element {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 10s infinite linear;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+        }
+    }
+</style>
+
+<div class="floating-elements">
+    <i class="fas fa-cube floating-element" style="left: 10%; animation-delay: 0s; font-size: 2rem;"></i>
+    <i class="fas fa-gamepad floating-element" style="left: 80%; animation-delay: 2s; font-size: 1.5rem;"></i>
+    <i class="fas fa-heart floating-element" style="left: 60%; animation-delay: 4s; font-size: 1.8rem;"></i>
+    <i class="fas fa-star floating-element" style="left: 20%; animation-delay: 6s; font-size: 1.3rem;"></i>
+    <i class="fas fa-gem floating-element" style="left: 90%; animation-delay: 8s; font-size: 2.2rem;"></i>
+</div>
+
+<div class="error-container">
+    <div class="error-code">404</div>
+
+    <h1 class="error-title">Page Not Found</h1>
+
+    <p class="error-description">
+        Oops! It seems like the page you're looking for has vanished into the void.
+        Don't worry though, our knowledgebase has plenty of other useful information to explore!
+    </p>
+
+    <div class="error-actions">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">
+            <i class="fas fa-home"></i>
+            Go Home
+        </a>
+        <button onclick="history.back()" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i>
+            Go Back
+        </button>
+    </div>
+
+    <div class="suggestions">
+        <h2 class="suggestions-title">
+            <i class="fas fa-lightbulb"></i>
+            Popular Pages
+        </h2>
+        <ul class="suggestions-list">
+            <li><a href="{{ url_for('index') }}">Home - Browse all categories</a></li>
+            <li><a href="/page/lifesteal-guide">Lifesteal Server Guide</a></li>
+            <li><a href="/page/getting-started">Getting Started</a></li>
+            <li><a href="/page/server-rules">Server Rules</a></li>
+            <li><a href="/page/faq">Frequently Asked Questions</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Add some interactive floating elements
+    document.addEventListener('DOMContentLoaded', function() {
+        const floatingContainer = document.querySelector('.floating-elements');
+
+        // Randomize floating element positions and delays
+        const elements = floatingContainer.querySelectorAll('.floating-element');
+        elements.forEach((element, index) => {
+            element.style.left = Math.random() * 90 + '%';
+            element.style.animationDelay = Math.random() * 10 + 's';
+            element.style.animationDuration = (8 + Math.random() * 6) + 's';
+        });
+    });
+</script>
+{% endblock %}

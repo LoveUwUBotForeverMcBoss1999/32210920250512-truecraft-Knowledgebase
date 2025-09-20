@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block title %}TrueCraft Network Knowledgebase{% endblock %}
+{% block description %}Comprehensive knowledgebase for TrueCraft Network servers including Lifesteal SMP guides, rules, features, and FAQs{% endblock %}
+
+{% block content %}
+<style>
+    .hero {
+        text-align: center;
+        padding: 3rem 0 4rem;
+        background: linear-gradient(135deg, var(--bg-panel) 0%, var(--bg-dark) 100%);
+        border-radius: 20px;
+        margin-bottom: 3rem;
+        border: 1px solid var(--border);
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .category-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .category-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--primary);
+    }
+
+    .category-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.5rem;
+    }
+
+    .category-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-light);
+    }
+
+    .category-count {
+        background: var(--bg-dark);
+        color: var(--text-muted);
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        border-radius: 12px;
+        margin-left: auto;
+    }
+
+    .pages-list {
+        list-style: none;
+    }
+
+    .page-item {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .page-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .page-link {
+        display: block;
+        text-decoration: none;
+        color: var(--text-light);
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+        transition: color 0.2s ease;
+    }
+
+    .page-link:hover {
+        color: var(--primary);
+    }
+
+    .page-description {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .stat-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-muted);
+    }
+
+    .empty-state i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .categories-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="hero">
+    <h1><i class="fas fa-book"></i> TrueCraft Network Knowledgebase</h1>
+    <p>Your comprehensive guide to our Minecraft servers, featuring detailed information about gameplay mechanics, rules, and features.</p>
+</div>
+
+{% if categories %}
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">{{ categories|length }}</div>
+            <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ total_pages }}</div>
+            <div class="stat-label">Total Pages</div>
+        </div>
+    </div>
+
+    <div class="categories-grid">
+        {% for category_name, pages in categories.items() %}
+        <div class="category-card">
+            <div class="category-header">
+                <div class="category-icon">
+                    {% if category_name == 'Lifesteal' %}
+                        <i class="fas fa-heart-broken"></i>
+                    {% elif category_name == 'Rules' %}
+                        <i class="fas fa-scroll"></i>
+                    {% elif category_name == 'Features' %}
+                        <i class="fas fa-star"></i>
+                    {% elif category_name == 'Getting Started' %}
+                        <i class="fas fa-rocket"></i>
+                    {% elif category_name == 'FAQ' %}
+                        <i class="fas fa-question-circle"></i>
+                    {% elif category_name == 'Commands' %}
+                        <i class="fas fa-terminal"></i>
+                    {% elif category_name == 'Economy' %}
+                        <i class="fas fa-coins"></i>
+                    {% else %}
+                        <i class="fas fa-book"></i>
+                    {% endif %}
+                </div>
+                <h2 class="category-title">{{ category_name }}</h2>
+                <span class="category-count">{{ pages|length }} page{{ 's' if pages|length != 1 else '' }}</span>
+            </div>
+
+            <ul class="pages-list">
+                {% for page in pages[:5] %}
+                <li class="page-item">
+                    <a href="{{ url_for('page', page_name=page.slug) }}" class="page-link">
+                        {{ page.title }}
+                    </a>
+                    {% if page.description %}
+                    <p class="page-description">{{ page.description[:100] }}{% if page.description|length > 100 %}...{% endif %}</p>
+                    {% endif %}
+                </li>
+                {% endfor %}
+
+                {% if pages|length > 5 %}
+                <li class="page-item">
+                    <a href="{{ url_for('category', category_name=category_name) }}" class="page-link" style="color: var(--primary);">
+                        View all {{ pages|length }} pages →
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="empty-state">
+        <i class="fas fa-book"></i>
+        <h2>No pages found</h2>
+        <p>Add some markdown files to the 'pages' directory to get started.</p>
+    </div>
+{% endif %}
+{% endblock %}

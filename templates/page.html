@@ -1,0 +1,474 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - TrueCraft Network{% endblock %}
+{% block description %}{{ page.description }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.description }}{% endblock %}
+{% block twitter_title %}{{ page.title }}{% endblock %}
+{% block twitter_description %}{{ page.description }}{% endblock %}
+
+{% block content %}
+<style>
+    .page-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        display: block;
+        margin: 1.5rem auto;
+    }
+
+    .page-header {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+    }
+
+    .breadcrumb a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+        color: var(--secondary);
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .page-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .category-badge {
+        background: var(--primary);
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-top: 1rem;
+        line-height: 1.6;
+    }
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .page-content {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        line-height: 1.7;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 120px;
+    }
+
+    .toc {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .toc-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .toc ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .toc li {
+        margin-bottom: 0.5rem;
+    }
+
+    .toc a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s ease;
+        display: block;
+        padding: 4px 0;
+    }
+
+    .toc a:hover {
+        color: var(--primary);
+    }
+
+    .actions-card {
+        background: var(--bg-panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .actions-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .action-button {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+        transition: all 0.2s ease;
+        text-align: left;
+    }
+
+    .action-button:hover {
+        background: var(--hover);
+        border-color: var(--primary);
+    }
+
+    .action-button:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Content Styles */
+    .page-content h1,
+    .page-content h2,
+    .page-content h3,
+    .page-content h4,
+    .page-content h5,
+    .page-content h6 {
+        color: var(--text-light);
+        margin: 2rem 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .page-content h1 { font-size: 2rem; }
+    .page-content h2 { font-size: 1.5rem; }
+    .page-content h3 { font-size: 1.25rem; }
+    .page-content h4 { font-size: 1.1rem; }
+
+    .page-content p {
+        margin-bottom: 1.5rem;
+        color: var(--text-light);
+    }
+
+    .page-content ul,
+    .page-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .page-content li {
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+    }
+
+    .page-content a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .page-content a:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+
+    .page-content blockquote {
+        border-left: 4px solid var(--primary);
+        background: var(--bg-dark);
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .page-content blockquote p {
+        margin: 0;
+        color: var(--text-muted);
+        font-style: italic;
+    }
+
+    .page-content code {
+        background: var(--bg-dark);
+        color: var(--secondary);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.875rem;
+    }
+
+    .page-content pre {
+        background: var(--bg-dark);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+    }
+
+    .page-content pre code {
+        background: none;
+        padding: 0;
+        color: var(--text-light);
+    }
+
+    .page-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: var(--bg-dark);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .page-content th,
+    .page-content td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .page-content th {
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+    }
+
+    .page-content tr:last-child td {
+        border-bottom: none;
+    }
+
+    .page-content hr {
+        border: none;
+        height: 1px;
+        background: var(--border);
+        margin: 2rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            position: static;
+            order: -1;
+        }
+
+        .toc,
+        .actions-card {
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 2rem;
+        }
+
+        .page-header,
+        .page-content {
+            padding: 1.5rem;
+        }
+
+        .page-meta {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+</style>
+
+<div class="page-header">
+    <nav class="breadcrumb">
+        <a href="{{ url_for('index') }}">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="{{ url_for('category', category_name=page.category) }}">{{ page.category }}</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>{{ page.title }}</span>
+    </nav>
+
+    <h1 class="page-title">{{ page.title }}</h1>
+
+    <div class="page-meta">
+        <span class="category-badge">{{ page.category }}</span>
+    </div>
+
+    {% if page.description %}
+    <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+</div>
+
+<div class="content-wrapper">
+    <article class="page-content">
+        {{ page.content | safe }}
+    </article>
+
+    <aside class="sidebar">
+        <div class="toc">
+            <h3 class="toc-title">
+                <i class="fas fa-list"></i>
+                Table of Contents
+            </h3>
+            <div id="toc-content">
+                <p style="color: var(--text-muted); font-size: 0.875rem;">Loading...</p>
+            </div>
+        </div>
+
+        <div class="actions-card">
+            <h3 class="actions-title">
+                <i class="fas fa-tools"></i>
+                Quick Actions
+            </h3>
+            <a href="{{ url_for('index') }}" class="action-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <a href="{{ url_for('category', category_name=page.category) }}" class="action-button">
+                <i class="fas fa-folder"></i> View {{ page.category }}
+            </a>
+            <a href="#" class="action-button" onclick="window.print(); return false;">
+                <i class="fas fa-print"></i> Print Page
+            </a>
+        </div>
+    </aside>
+</div>
+
+<script>
+    // Generate table of contents
+    document.addEventListener('DOMContentLoaded', function() {
+        const content = document.querySelector('.page-content');
+        const tocContent = document.getElementById('toc-content');
+        const headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+        if (headings.length === 0) {
+            tocContent.innerHTML = '<p style="color: var(--text-muted); font-size: 0.875rem;">No headings found</p>';
+            return;
+        }
+
+        const toc = document.createElement('ul');
+        toc.style.margin = '0';
+        toc.style.padding = '0';
+        toc.style.listStyle = 'none';
+
+        headings.forEach((heading, index) => {
+            // Create an ID for the heading if it doesn't have one
+            if (!heading.id) {
+                heading.id = 'heading-' + index;
+            }
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.style.paddingLeft = ((parseInt(heading.tagName.charAt(1)) - 1) * 12) + 'px';
+
+            li.appendChild(a);
+            toc.appendChild(li);
+
+            // Smooth scroll behavior
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                window.history.pushState(null, null, '#' + heading.id);
+            });
+        });
+
+        tocContent.innerHTML = '';
+        tocContent.appendChild(toc);
+    });
+
+    // Highlight current section in TOC
+    window.addEventListener('scroll', function() {
+        const headings = document.querySelectorAll('.page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6');
+        const tocLinks = document.querySelectorAll('#toc-content a');
+
+        let currentHeading = null;
+
+        headings.forEach(heading => {
+            const rect = heading.getBoundingClientRect();
+            if (rect.top <= 100) {
+                currentHeading = heading;
+            }
+        });
+
+        tocLinks.forEach(link => {
+            link.style.color = 'var(--text-muted)';
+            link.style.fontWeight = 'normal';
+        });
+
+        if (currentHeading) {
+            const activeLink = document.querySelector(`#toc-content a[href="#${currentHeading.id}"]`);
+            if (activeLink) {
+                activeLink.style.color = 'var(--primary)';
+                activeLink.style.fontWeight = '600';
+            }
+        }
+    });
+</script>
+{% endblock %}
