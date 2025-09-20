@@ -1,5 +1,5 @@
 ---
-title: "TrueCraft Lifesteal Knowledgebase"
+title: "Testing knowledgebase TrueCraft Lifesteal Knowledgebase"
 description: "Comprehensive knowledgebase for the TrueCraft Lifesteal Minecraft server, covering gameplay, rules, features, and FAQs."
 category: "Lifesteal"
 ---
