@@ -5,7 +5,7 @@ category: "GettingStarted"
 ---
 
 # 🚀 Get Started with TrueCraft Network
-
+![Welcome banner](https://knowledgebase.truecraft.top/static/images/get_stard.jpg)
 Welcome to the **TrueCraft Network**!  
 This guide will walk you through the process of connecting to our Minecraft server.
 
