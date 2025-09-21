@@ -1,7 +1,7 @@
 ---
 title: "Get Started with TrueCraft Network"
 description: "Step-by-step guide to joining the TrueCraft Network Minecraft server."
-category: "Getting Started"
+category: "GettingStarted"
 ---
 
 # 🚀 Get Started with TrueCraft Network
