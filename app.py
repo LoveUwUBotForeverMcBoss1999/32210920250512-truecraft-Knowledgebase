@@ -1,113 +1,126 @@
-import os
 from flask import Flask, render_template, abort, request, jsonify
-from pathlib import Path
+import os
 import markdown
 import frontmatter
+from pathlib import Path
+import re
 
-# Base directory for the project
-BASE_DIR = Path(__file__).parent.resolve()
+app = Flask(__name__)
 
-# Initialize Flask app
-app = Flask(
-    __name__,
-    template_folder=BASE_DIR / "templates",
-    static_folder=BASE_DIR / "static"
-)
 
 def load_page(page_name):
-    """Load a markdown page and convert to HTML"""
-    page_path = BASE_DIR / "pages" / f"{page_name}.md"
+    """Load a markdown page with frontmatter"""
+    page_path = Path(f'pages/{page_name}.md')
     if not page_path.exists():
         return None
+
     try:
-        with open(page_path, "r", encoding="utf-8") as f:
+        with open(page_path, 'r', encoding='utf-8') as f:
             post = frontmatter.load(f)
-        html_content = markdown.markdown(
-            post.content,
-            extensions=['fenced_code', 'tables', 'toc']
-        )
+
+        # Convert markdown to HTML
+        html_content = markdown.markdown(post.content, extensions=['fenced_code', 'tables', 'toc'])
+
         return {
-            "title": post.metadata.get("title", page_name),
-            "description": post.metadata.get("description", ""),
-            "category": post.metadata.get("category", "General"),
-            "content": html_content,
-            "slug": page_name
+            'title': post.metadata.get('title', page_name),
+            'description': post.metadata.get('description', ''),
+            'category': post.metadata.get('category', 'General'),
+            'content': html_content,
+            'slug': page_name
         }
     except Exception as e:
         print(f"Error loading page {page_name}: {e}")
         return None
 
+
 def get_all_pages():
-    """Return all markdown pages with metadata"""
-    pages_dir = BASE_DIR / "pages"
+    """Get all available pages with their metadata"""
+    pages_dir = Path('pages')
     if not pages_dir.exists():
         return []
+
     pages = []
-    for md_file in pages_dir.glob("*.md"):
-        page_data = load_page(md_file.stem)
+    for md_file in pages_dir.glob('*.md'):
+        page_name = md_file.stem
+        page_data = load_page(page_name)
         if page_data:
             pages.append(page_data)
+
     return pages
 
+
 def get_categories():
-    """Return a dictionary of categories mapping to pages"""
+    """Get all unique categories from pages"""
     pages = get_all_pages()
     categories = {}
+
     for page in pages:
-        category = page["category"]
-        categories.setdefault(category, []).append(page)
+        category = page['category']
+        if category not in categories:
+            categories[category] = []
+        categories[category].append(page)
+
     return categories
 
-@app.route("/")
-def index():
-    """Homepage showing pages categorized"""
-    categories = get_categories()
-    total_pages = sum(len(pages) for pages in categories.values())
-    return render_template("index.html", categories=categories, total_pages=total_pages)
 
-@app.route("/page/<page_name>")
+@app.route('/')
+def index():
+    """Homepage with categorized pages"""
+    categories = get_categories()
+    # Calculate total pages count
+    total_pages = sum(len(pages) for pages in categories.values())
+    return render_template('index.html', categories=categories, total_pages=total_pages)
+
+
+@app.route('/page/<page_name>')
 def page(page_name):
-    """Render individual page"""
+    """Individual page view"""
     page_data = load_page(page_name)
     if not page_data:
         abort(404)
-    return render_template("page.html", page=page_data)
 
-@app.route("/search")
+    return render_template('page.html', page=page_data)
+
+
+@app.route('/search')
 def search():
-    """Search endpoint returning JSON results"""
-    query = request.args.get("q", "").lower().strip()
+    """Search endpoint"""
+    query = request.args.get('q', '').lower().strip()
     if not query:
         return jsonify([])
+
+    pages = get_all_pages()
     results = []
-    for page in get_all_pages():
+
+    for page in pages:
+        # Search in title, description, and content
         searchable_text = f"{page['title']} {page['description']} {page['content']}".lower()
         if query in searchable_text:
             results.append({
-                "title": page["title"],
-                "description": page["description"],
-                "category": page["category"],
-                "url": f"/page/{page['slug']}"
+                'title': page['title'],
+                'description': page['description'],
+                'category': page['category'],
+                'url': f'/page/{page["slug"]}'
             })
+
     return jsonify(results)
 
-@app.route("/category/<category_name>")
+
+@app.route('/category/<category_name>')
 def category(category_name):
-    """Render pages for a specific category"""
+    """Category page"""
     categories = get_categories()
     if category_name not in categories:
         abort(404)
-    return render_template("category.html", category=category_name, pages=categories[category_name])
+
+    pages = categories[category_name]
+    return render_template('category.html', category=category_name, pages=pages)
+
 
 @app.errorhandler(404)
 def not_found(error):
-    """Custom 404 page"""
-    return render_template("404.html"), 404
+    return render_template('404.html'), 404
 
-# Add this at the end for Vercel
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     app.run(debug=True)
-
-# This is crucial for Vercel to recognize the app
-app = app
-
