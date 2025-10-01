@@ -100,6 +100,7 @@ Visit our store to claim your rank and unlock your full potential on Lifesteal!
 ## 🎁 What You Get Instantly
 
 All ranks come with:
+-
 - ✅ **Immediate activation** - no waiting!
 - ✅ **Exclusive starter kit** with premium items
 - ✅ **Permanent access** - never expires
