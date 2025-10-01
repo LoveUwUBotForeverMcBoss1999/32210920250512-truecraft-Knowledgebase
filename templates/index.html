@@ -207,32 +207,27 @@
     <div class="categories-grid">
         {% for category_name, pages in categories.items() %}
         <div class="category-card">
-            <div class="category-header">
-                <div class="category-icon">
-                    {% if category_name == 'Lifesteal' %}
-                        <i class="fas fa-heart-broken"></i>
-                    {% if category_name == 'Survival' %}
-                        <i class="fas fa-tree"></i>
-                    {% elif category_name == 'Rules' %}
-                        <i class="fas fa-scroll"></i>
-                    {% elif category_name == 'Features' %}
-                        <i class="fas fa-star"></i>
-                    {% elif category_name == 'Getting Started' %}
-                        <i class="fas fa-rocket"></i>
-                    {% elif category_name == 'FAQ' %}
-                        <i class="fas fa-question-circle"></i>
-                    {% elif category_name == 'Commands' %}
-                        <i class="fas fa-terminal"></i>
-                    {% elif category_name == 'Economy' %}
-                        <i class="fas fa-coins"></i>
-                    {% else %}
-                        <i class="fas fa-book"></i>
-                    {% endif %}
-                </div>
-                <h2 class="category-title">{{ category_name }}</h2>
-                <span class="category-count">{{ pages|length }} page{{ 's' if pages|length != 1 else '' }}</span>
+            <div class="category-icon">
+                {% if category_name == 'Lifesteal' %}
+                    <i class="fas fa-heart-broken"></i>
+                {% elif category_name == 'Survival' %}
+                    <i class="fas fa-tree"></i>
+                {% elif category_name == 'Rules' %}
+                    <i class="fas fa-scroll"></i>
+                {% elif category_name == 'Features' %}
+                    <i class="fas fa-star"></i>
+                {% elif category_name == 'Getting Started' %}
+                    <i class="fas fa-rocket"></i>
+                {% elif category_name == 'FAQ' %}
+                    <i class="fas fa-question-circle"></i>
+                {% elif category_name == 'Commands' %}
+                    <i class="fas fa-terminal"></i>
+                {% elif category_name == 'Economy' %}
+                    <i class="fas fa-coins"></i>
+                {% else %}
+                    <i class="fas fa-book"></i>
+                {% endif %}
             </div>
-
             <ul class="pages-list">
                 {% for page in pages[:5] %}
                 <li class="page-item">
