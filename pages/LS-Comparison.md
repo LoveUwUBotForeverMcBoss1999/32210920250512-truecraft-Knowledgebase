@@ -15,7 +15,7 @@ Unlock premium perks and take your Lifesteal experience to the next level! Compa
 | Feature | 🐉 Dragon | ⚔️ Kraven | 🔥 Phoenix ⭐ |
 |---------|-----------|-----------|---------------|
 | **Sethomes** | 5 | 7 | **9** |
-| **Player Warps/Auctions** | 5 | 7 | **9** |
+| **Player Auctions Limit** | 5 | 7 | **9** |
 | **Color Codes in Chat** | ✅ | ✅ | ✅ |
 | **Colored Nicknames** | ✅ | ✅ | ✅ |
 | **Portable Workbench** (`/craft`) | ✅ | ✅ | ✅ |
@@ -26,7 +26,9 @@ Unlock premium perks and take your Lifesteal experience to the next level! Compa
 | **Feed Command** (`/feed`) | ✅ | ✅ | ✅ |
 | **Nickname System** (`/nick`) | ✅ | ✅ | ✅ |
 | **Item Rename** (`/rename`) | ✅ | ✅ | ✅ |
-| **Enderchest Access** (`/enderchest`) | ❌ | ❌ | **✅** |
+| **Portable Anvil Command Access** (`/anvil`) | ❌ | ✅ | **✅** |
+| **Compass Command Access** (`/compass`) | ❌ | ✅ | **✅** |
+| **Enderchest Command Access** (`/enderchest`) | ❌ | ❌ | **✅** |
 | **Ignore Players** (`/ignore`) | ❌ | ❌ | **✅** |
 | **TP Toggle** (`/tptoggle`) | ❌ | ❌ | **✅** |
 | **Message Toggle** (`/msgtoggle`) | ❌ | ❌ | **✅** |
@@ -39,7 +41,7 @@ Unlock premium perks and take your Lifesteal experience to the next level! Compa
 
 ### 🔥 Maximum Freedom
 - **9 Sethomes** - Never run out of quick travel spots! Perfect for multiple bases, farms, and secret locations
-- **9 Player Warps** - Build the ultimate warp network or run 9 different shops simultaneously
+- **9 Player Auctions Limit** - Build the ultimate warp network or run 9 different shops simultaneously
 
 ### 🛡️ Ultimate Control
 Phoenix is the **ONLY** rank with complete privacy and control features:
@@ -50,7 +52,8 @@ Phoenix is the **ONLY** rank with complete privacy and control features:
 
 ### ⚡ Instant Access Anywhere
 - Access your **enderchest from anywhere** with `/enderchest` - no need to craft or find one!
-- Combined with portable workbench and feed command, you'll never need to return to base
+- Use **portable anvil** with `/anvil` and **portable workbench** with `/craft`
+- Combined with feed command, you'll never need to return to base
 
 ### 💰 Best Value
 Phoenix includes **EVERYTHING** from Dragon and Kraven ranks, plus exclusive features you can't get anywhere else. Why settle for less when you can have it all?
@@ -67,19 +70,19 @@ Perfect if you're new to premium perks and want to test the waters. Get essentia
 ---
 
 ### ⚔️ **Kraven Rank** - *Good Value*
-Solid middle ground with 7 homes and auction access. Great for active traders and players with multiple bases.
+Solid middle ground with 7 homes, auction access, and portable anvil command access. Great for active traders and players with multiple bases.
 
 👉 [View Kraven Rank Details](/ranks/kraven)
 
 ---
 
 ### 🔥 **Phoenix Rank** - *BEST CHOICE* ⭐
-**The ultimate Lifesteal experience!** Maximum homes, exclusive privacy commands, and remote enderchest access. This is the rank serious players choose.
+**The ultimate Lifesteal experience!** Maximum homes, exclusive privacy commands, and remote enderchest command access. This is the rank serious players choose.
 
 **Why Phoenix Wins:**
 - 🏆 Most homes and warps on the server
 - 🛡️ Exclusive privacy and control features
-- ⚡ Enderchest access anywhere
+- ⚡ Enderchest command access anywhere
 - 👑 Most prestigious rank status
 - 💪 Complete dominance over the competition
 
@@ -91,8 +94,7 @@ Solid middle ground with 7 homes and auction access. Great for active traders an
 
 Visit our store to claim your rank and unlock your full potential on Lifesteal!
 
-### **[🔥 GET YOUR RANK NOW →](https://store.truecraft.top/store)**
-
+[![img.png](https://knowledgebase.truecraft.top/static/images/store.png)](https://store.truecraft.top/store)
 ---
 
 ## 🎁 What You Get Instantly

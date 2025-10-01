@@ -16,7 +16,7 @@ The **Dragon Rank** is your entry into premium benefits on the TrueCraft Lifeste
 
 ### 🏠 Homes & Warps
 - **5 Sethomes** - Set up to 5 home locations for quick teleportation
-- **5 Player Warps** - Create your own public warp points
+- **5 Player Auctions Limit** - Create your own public warp points
 
 ### 🎨 Customization
 - **Color Codes in Chat** - Make your messages stand out with vibrant colors
@@ -54,8 +54,8 @@ Claim your exclusive Dragon starter kit with:
 ## 🚀 Ready to Upgrade?
 
 Looking for even more perks? Check out:
-- **[Kraven Rank](/ranks/kraven)** - Includes all Dragon perks plus player auctions and more homes
-- **[Phoenix Rank](/ranks/phoenix)** - The ultimate rank with all features unlocked
+- **[Kraven Rank](https://knowledgebase.truecraft.top/page/Kraven)** - Includes all Dragon perks plus player auctions, portable anvil command access, compass command access, and more homes
+- **[Phoenix Rank](https://knowledgebase.truecraft.top/page/Phoenix)** - The ultimate rank with all features unlocked
 
 ---
 

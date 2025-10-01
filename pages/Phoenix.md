@@ -16,7 +16,7 @@ The **Phoenix Rank** is the ultimate premium tier on TrueCraft Lifesteal! Rise a
 
 ### 🏠 Homes & Warps
 - **9 Sethomes** - Maximum home locations for unmatched mobility
-- **9 Player Warps** - Create the most public warp points on the server
+- **9 Player Auctions Limit** - Create the most public warp points on the server
 
 ### 🎨 Customization
 - **Color Codes in Chat** - Make every message uniquely yours
@@ -27,13 +27,15 @@ The **Phoenix Rank** is the ultimate premium tier on TrueCraft Lifesteal! Rise a
 ## 🛠️ Available Commands
 
 ### Utility Commands
-All Dragon and Kraven commands, including:
+- All Dragon and Kraven commands, including,
 - `/craft` - Open a portable workbench anywhere
 - `/recipe` - Check crafting recipes for any item
 - `/disposal` - Access a trash can to delete unwanted items
 - `/near` - See which players are nearby
 - `/hat` - Turn any item into a stylish hat
 - `/feed` - Restore your hunger bar (10 minutes cooldown)
+- `/anvil` - Open a portable anvil anywhere
+- `/compass` - Access compass features
 - `/enderchest` - Access your enderchest from anywhere
 
 ### Personalization Commands
@@ -63,8 +65,9 @@ Claim your exclusive Phoenix starter kit with:
 ## 👑 The Ultimate Package
 
 Phoenix Rank includes **everything from Dragon and Kraven Ranks**, plus:
+- 
 - ➕ 9 sethomes (maximum available)
-- ➕ 9 player warps (maximum available)
+- ➕ 9 player auctions limit (maximum available)
 - ➕ `/enderchest` command for remote access
 - ➕ Privacy toggle commands (`/tptoggle`, `/msgtoggle`, `/paytoggle`)
 - ➕ `/ignore` command for player management
@@ -72,17 +75,11 @@ Phoenix Rank includes **everything from Dragon and Kraven Ranks**, plus:
 
 ---
 
-## 🎯 Complete Feature Comparison
+## 🎯 Compare All Ranks
 
-| Feature | Dragon | Kraven | Phoenix |
-|---------|--------|--------|---------|
-| Sethomes | 5 | 7 | **9** |
-| Player Warps/Auctions | 5 | 7 | **9** |
-| Color Codes | ✅ | ✅ | ✅ |
-| Basic Commands | ✅ | ✅ | ✅ |
-| Enderchest Access | ❌ | ❌ | **✅** |
-| Privacy Toggles | ❌ | ❌ | **✅** |
-| Ignore Command | ❌ | ❌ | **✅** |
+Want to see how Phoenix stacks up against Dragon and Kraven?
+
+👉 **[View Complete Rank Comparison](/page/LS-Comparison)**
 
 ---
 
