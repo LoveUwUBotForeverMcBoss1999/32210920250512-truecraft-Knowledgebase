@@ -12,28 +12,29 @@ Unlock premium perks and take your Lifesteal experience to the next level! Compa
 
 ## 🏆 Rank Comparison
 
-| Feature | 🐉 Dragon | ⚔️ Kraven | 🔥 Phoenix ⭐ |
-|---------|-----------|-----------|---------------|
-| **Sethomes** | 5 | 7 | **9** |
-| **Player Auctions Limit** | 5 | 7 | **9** |
-| **Color Codes in Chat** | ✅ | ✅ | ✅ |
-| **Colored Nicknames** | ✅ | ✅ | ✅ |
-| **Portable Workbench** (`/craft`) | ✅ | ✅ | ✅ |
-| **Recipe Checker** (`/recipe`) | ✅ | ✅ | ✅ |
-| **Trash Can** (`/disposal`) | ✅ | ✅ | ✅ |
-| **Player Tracker** (`/near`) | ✅ | ✅ | ✅ |
-| **Hat System** (`/hat`) | ✅ | ✅ | ✅ |
-| **Feed Command** (`/feed`) | ✅ | ✅ | ✅ |
-| **Nickname System** (`/nick`) | ✅ | ✅ | ✅ |
-| **Item Rename** (`/rename`) | ✅ | ✅ | ✅ |
-| **Portable Anvil Command Access** (`/anvil`) | ❌ | ✅ | **✅** |
-| **Compass Command Access** (`/compass`) | ❌ | ✅ | **✅** |
-| **Enderchest Command Access** (`/enderchest`) | ❌ | ❌ | **✅** |
-| **Ignore Players** (`/ignore`) | ❌ | ❌ | **✅** |
-| **TP Toggle** (`/tptoggle`) | ❌ | ❌ | **✅** |
-| **Message Toggle** (`/msgtoggle`) | ❌ | ❌ | **✅** |
-| **Payment Toggle** (`/paytoggle`) | ❌ | ❌ | **✅** |
-| **Exclusive Starter Kit** | ✅ | ✅ | ✅ |
+| Feature                                       | 🐉 Dragon | ⚔️ Kraven | 🔥 Phoenix ⭐ |
+|-----------------------------------------------|-----------|-----------|--------------|
+| **Sethomes**                                  | 5         | 7         | **9**        |
+| **Player Auctions Limit**                     | 5         | 7         | **9**        |
+| **Color Codes in Chat**                       | ✅         | ✅         | ✅            |
+| **Colored Nicknames**                         | ✅         | ✅         | ✅            |
+| **Portable Workbench** (`/craft`)             | ✅         | ✅         | ✅            |
+| **Recipe Checker** (`/recipe`)                | ✅         | ✅         | ✅            |
+| **Trash Can** (`/disposal`)                   | ✅         | ✅         | ✅            |
+| **Player Tracker** (`/near`)                  | ✅         | ✅         | ✅            |
+| **Hat System** (`/hat`)                       | ✅         | ✅         | ✅            |
+| **Feed Command** (`/feed`)                    | ✅         | ✅         | ✅            |
+| **Nickname System** (`/nick`)                 | ✅         | ✅         | ✅            |
+| **Item Rename** (`/rename`)                   | ✅         | ✅         | ✅            |
+| **Portable Anvil Command Access** (`/anvil`)  | ❌         | ✅         | **✅**        |
+| **Compass Command Access** (`/compass`)       | ❌         | ✅         | **✅**        |
+| **Enderchest Command Access** (`/enderchest`) | ❌         | ❌         | **✅**        |
+| **Ignore Players** (`/ignore`)                | ❌         | ❌         | **✅**        |
+| **TP Toggle** (`/tptoggle`)                   | ❌         | ❌         | **✅**        |
+| **Message Toggle** (`/msgtoggle`)             | ❌         | ❌         | **✅**        |
+| **Payment Toggle** (`/paytoggle`)             | ❌         | ❌         | **✅**        |
+| **Exclusive Starter Kit**                     | ✅         | ✅         | ✅            |
+| **Tier Price (USD)**                           | $2.99     | $3.99     | $4.99        |
 
 ---
 
@@ -100,12 +101,14 @@ Visit our store to claim your rank and unlock your full potential on Lifesteal!
 ## 🎁 What You Get Instantly
 
 All ranks come with:
--
-- ✅ **Immediate activation** - no waiting!
-- ✅ **Exclusive starter kit** with premium items
-- ✅ **Permanent access** - never expires
-- ✅ **All commands unlocked** instantly
-- ✅ **Full customization** with colors and nicknames
+
+* ✅ **Quick activation** – we process orders as fast as possible!
+* ✅ **Exclusive starter kit** with premium items
+* ✅ **Permanent access** – never expires
+* ✅ **All commands unlocked** instantly
+* ✅ **Full customization** with colors and nicknames
+
+⏱ **Processing time:** While we aim to deliver your order ASAP, please allow up to **24 hours** for completion.
 
 ---
 
