@@ -1,0 +1,119 @@
+---
+title: "Lifesteal Ranks - Choose Your Power"
+description: "Compare Dragon, Kraven, and Phoenix ranks to find the perfect upgrade for your Lifesteal adventure!"
+category: "Lifesteal"
+---
+
+# ⚔️ Choose Your Rank - Dominate Lifesteal!
+
+Unlock premium perks and take your Lifesteal experience to the next level! Compare our three powerful ranks and choose the one that fits your playstyle.
+
+---
+
+## 🏆 Rank Comparison
+
+| Feature | 🐉 Dragon | ⚔️ Kraven | 🔥 Phoenix ⭐ |
+|---------|-----------|-----------|---------------|
+| **Sethomes** | 5 | 7 | **9** |
+| **Player Warps/Auctions** | 5 | 7 | **9** |
+| **Color Codes in Chat** | ✅ | ✅ | ✅ |
+| **Colored Nicknames** | ✅ | ✅ | ✅ |
+| **Portable Workbench** (`/craft`) | ✅ | ✅ | ✅ |
+| **Recipe Checker** (`/recipe`) | ✅ | ✅ | ✅ |
+| **Trash Can** (`/disposal`) | ✅ | ✅ | ✅ |
+| **Player Tracker** (`/near`) | ✅ | ✅ | ✅ |
+| **Hat System** (`/hat`) | ✅ | ✅ | ✅ |
+| **Feed Command** (`/feed`) | ✅ | ✅ | ✅ |
+| **Nickname System** (`/nick`) | ✅ | ✅ | ✅ |
+| **Item Rename** (`/rename`) | ✅ | ✅ | ✅ |
+| **Enderchest Access** (`/enderchest`) | ❌ | ❌ | **✅** |
+| **Ignore Players** (`/ignore`) | ❌ | ❌ | **✅** |
+| **TP Toggle** (`/tptoggle`) | ❌ | ❌ | **✅** |
+| **Message Toggle** (`/msgtoggle`) | ❌ | ❌ | **✅** |
+| **Payment Toggle** (`/paytoggle`) | ❌ | ❌ | **✅** |
+| **Exclusive Starter Kit** | ✅ | ✅ | ✅ |
+
+---
+
+## 💎 Why Phoenix is the BEST Choice
+
+### 🔥 Maximum Freedom
+- **9 Sethomes** - Never run out of quick travel spots! Perfect for multiple bases, farms, and secret locations
+- **9 Player Warps** - Build the ultimate warp network or run 9 different shops simultaneously
+
+### 🛡️ Ultimate Control
+Phoenix is the **ONLY** rank with complete privacy and control features:
+- Block unwanted teleport requests with `/tptoggle`
+- Control your private messages with `/msgtoggle`
+- Manage payment requests with `/paytoggle`
+- Ignore annoying players with `/ignore`
+
+### ⚡ Instant Access Anywhere
+- Access your **enderchest from anywhere** with `/enderchest` - no need to craft or find one!
+- Combined with portable workbench and feed command, you'll never need to return to base
+
+### 💰 Best Value
+Phoenix includes **EVERYTHING** from Dragon and Kraven ranks, plus exclusive features you can't get anywhere else. Why settle for less when you can have it all?
+
+---
+
+## 🎯 Which Rank is Right for You?
+
+### 🐉 **Dragon Rank** - *Great Start*
+Perfect if you're new to premium perks and want to test the waters. Get essential commands and 5 homes to improve your gameplay.
+
+👉 [View Dragon Rank Details](/ranks/dragon)
+
+---
+
+### ⚔️ **Kraven Rank** - *Good Value*
+Solid middle ground with 7 homes and auction access. Great for active traders and players with multiple bases.
+
+👉 [View Kraven Rank Details](/ranks/kraven)
+
+---
+
+### 🔥 **Phoenix Rank** - *BEST CHOICE* ⭐
+**The ultimate Lifesteal experience!** Maximum homes, exclusive privacy commands, and remote enderchest access. This is the rank serious players choose.
+
+**Why Phoenix Wins:**
+- 🏆 Most homes and warps on the server
+- 🛡️ Exclusive privacy and control features
+- ⚡ Enderchest access anywhere
+- 👑 Most prestigious rank status
+- 💪 Complete dominance over the competition
+
+👉 [View Phoenix Rank Details](/ranks/phoenix)
+
+---
+
+## 🛒 Ready to Upgrade?
+
+Visit our store to claim your rank and unlock your full potential on Lifesteal!
+
+### **[🔥 GET YOUR RANK NOW →](https://store.truecraft.top/store)**
+
+---
+
+## 🎁 What You Get Instantly
+
+All ranks come with:
+- ✅ **Immediate activation** - no waiting!
+- ✅ **Exclusive starter kit** with premium items
+- ✅ **Permanent access** - never expires
+- ✅ **All commands unlocked** instantly
+- ✅ **Full customization** with colors and nicknames
+
+---
+
+## 💬 Still Deciding?
+
+**Most Popular Choice:** 🔥 **Phoenix Rank** - 78% of premium players choose Phoenix for the complete experience!
+
+Don't limit yourself - **go Phoenix** and never look back! 👑
+
+### **[CLAIM PHOENIX RANK →](https://store.truecraft.top/store)**
+
+---
+
+*Ranks are permanent and work across all Lifesteal seasons. Invest in your gameplay today!*
