@@ -44,7 +44,7 @@ Unlock premium perks and take your Lifesteal experience to the next level! Compa
 - **9 Sethomes** - Never run out of quick travel spots! Perfect for multiple bases, farms, and secret locations. You won’t find a server with perks like this anywhere else.  
 - **9 Player Auctions Limit** - Build the ultimate warp network or run 9 different shops simultaneously. These perks are unmatched on any popular Lifesteal server!
 
-#### These perks are so rare, players won’t find a server offering them anywhere else!
+_**These perks are so rare, players won’t find a server offering them anywhere else!**_
 
 ### 🛡️ Ultimate Control
 Phoenix is the **ONLY** rank with complete privacy and control features:
