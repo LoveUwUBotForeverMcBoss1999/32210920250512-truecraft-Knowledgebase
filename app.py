@@ -5,13 +5,15 @@ import frontmatter
 from pathlib import Path
 import re
 
-app = Flask(__name__)
-
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, 'templates'),
+    static_folder=os.path.join(BASE_DIR, 'static')
+)
 
 def load_page(page_name):
-    """Load a markdown page with frontmatter"""
-    page_path = Path(f'pages/{page_name}.md')
-    if not page_path.exists():
+    page_path = os.path.join(BASE_DIR, 'pages', f'{page_name}.md')
+    if not os.path.exists(page_path):
         return None
 
     try:
@@ -120,8 +122,3 @@ def category(category_name):
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
-
-
-if __name__ == '__main__':
-
-    app.run(debug=False)
